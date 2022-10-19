@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap");
+body {
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, "Noto Sans JP";
+  @extend .zen;
+}
+
+.zen {
+  font-family: "Roboto", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: medium;
+}
+.zen-b {
+  font-family: "Roboto", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: bold;
+}
