@@ -1,43 +1,75 @@
-$breakpoint-xs: 375px;
-$breakpoint-mobile: 940px;
-$breakpoint-pc: 1280px;
-
-@mixin xs {
-  @media (max-width: ($breakpoint-xs)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (max-width: ($breakpoint-mobile)) {
-    @content;
-  }
-}
-@mixin pc {
-  @media (max-width: ($breakpoint-pc)) {
-    @content;
-  }
-}
-@mixin inner($width: $breakpoint-mobile) {
-  @media (max-width: ($width)) {
-    @content;
-  }
+body {
+  color: $text-bl;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-@mixin pcOver {
-  @media (min-width: ($breakpoint-pc)) {
-    @content;
-  }
+.base-inner {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.sp-none {
+.common-inner {
+  width: 100%;
+  max-width: lpx(1080);
+  margin: 0 auto;
   @include sp {
-    display: none !important;
+    max-width: lpx(334, $sp);
   }
 }
 
-.pc-none {
-  display: none !important;
+.section-title {
+  margin: 0 0 0 auto;
+  font-size: lpx(100);
+  line-height: 1.8;
+  @extend .lato-b;
   @include sp {
-    display: block !important;
+    font-size: lpx(60);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
   }
+}
+
+.section-sub-title {
+  color: $main;
+  font-size: lpx(40);
+  line-height: 1.2;
+  @extend .lato-b;
+}
+
+.section-text {
+  font-size: lpx(18);
+  @include sp {
+    font-size: lpx(15, $sp);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 lpx(18);
+  padding: lpx(24) lpx(74);
+  background-color: $sub;
+  color: $text-wh;
+  font-size: lpx(24);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: lpx(8);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  @extend .lato-b;
 }

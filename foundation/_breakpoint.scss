@@ -1,0 +1,49 @@
+$breakpoint-xs: 375px;
+$breakpoint-mobile: 940px;
+$breakpoint-pc: 1280px;
+
+@mixin xs {
+  @media (max-width: ($breakpoint-xs)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($breakpoint-mobile)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (max-width: ($breakpoint-pc)) {
+    @content;
+  }
+}
+@mixin inner($width: $breakpoint-mobile) {
+  @media (max-width: ($width)) {
+    @content;
+  }
+}
+
+@mixin pcOver {
+  @media (min-width: ($breakpoint-pc)) {
+    @content;
+  }
+}
+
+.sp-none {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.pc-none {
+  display: none !important;
+  @include sp {
+    display: block !important;
+  }
+}
+
+// liquid pixel
+$sp: 375;
+@function lpx($pixel, $width: 1280) {
+  @return calc(#{$pixel} / #{$width} * 100vw);
+}
